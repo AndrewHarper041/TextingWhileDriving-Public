@@ -6,16 +6,8 @@ extends VehicleBody3D
 var steer_target = 0
 @export var engine_force_value = 40
 
-#camera variables
-var isFrontFacing = true
-var frontPos = Vector3(-0.283, 1.199, 0.459) #these numbers are magical in nature
-var backPos = Vector3(0, 2, 5)
-var targetPos = frontPos
-var camSpeed = 2
-var cam
-
 func _ready():
-	cam = get_node("FirstPersonCamera")
+	pass
 
 
 func _physics_process(delta):
@@ -54,21 +46,6 @@ func _physics_process(delta):
 		$wheal2.wheel_friction_slip=3
 		$wheal3.wheel_friction_slip=3
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
-	
-	if Input.is_action_just_pressed("camera_flip"):
-		if (isFrontFacing):
-			isFrontFacing = false
-			targetPos = backPos
-		else:
-			isFrontFacing = true
-			targetPos = frontPos
-	
-	cam.transform.origin = cam.transform.origin.lerp(targetPos, delta * camSpeed)
-
-
 
 func traction(speed):
 	apply_central_force(Vector3.DOWN*speed/2)
-
-
-
