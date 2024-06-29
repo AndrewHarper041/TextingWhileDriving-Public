@@ -25,11 +25,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	handleCameraInput()
-	if (transform.origin != targetPos):
-		transform.origin = transform.origin.lerp(targetPos, delta * camSpeed)
-	if (rotation != targetRot):
-		rotation = rotation.lerp(targetRot, delta * camRotationSpeed)
+	pass
+		#handleCameraInput()
+		#if (transform.origin != targetPos):
+			#transform.origin = transform.origin.lerp(targetPos, delta * camSpeed)
+		#if (rotation != targetRot):
+			#rotation = rotation.lerp(targetRot, delta * camRotationSpeed)
 		
 func moveCameraPositionTarget(changeToPos):
 	targetPos = changeToPos
