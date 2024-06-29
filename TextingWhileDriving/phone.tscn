@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfii24x1rv5go"]
+
+[ext_resource type="Script" path="res://phone.gd" id="1_3n6pf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuxpk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3x1ir"]
+
+[node name="Phone" type="Node3D"]
+script = ExtResource("1_3n6pf")
+
+[node name="ViewportQuad" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0, 0.232413, 0)
+material_override = SubResource("StandardMaterial3D_nuxpk")
+mesh = SubResource("PlaneMesh_3x1ir")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="PhoneScreen" type="Node2D" parent="SubViewport"]
+
+[node name="TextEdit" type="TextEdit" parent="SubViewport/PhoneScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 496.0
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+placeholder_text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+wrap_mode = 1
