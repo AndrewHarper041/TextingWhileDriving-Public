@@ -1,10 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1719513299
+::res://::1719670976
 icon.svg::CompressedTexture2D::4228800703888723602::1718737710::1719271077::1::::<><>::
 LICENCE.txt::TextFile::-1::1718737710::0::1::::<><>::
-main.tscn::PackedScene::3795851759440628420::1719276907::0::1::::<><>::uid://ci52bv1m15cbs::::res://cars/Doge.tscn<>uid://de1ky6qcdxcym::::res://phone.tscn
-phone.gdshader::Shader::-1::1719276939::0::1::::<><>::
-phone.tscn::PackedScene::5140836119898960906::1719276939::0::1::::<><>::
+main.tscn::PackedScene::3795851759440628420::1719629903::0::1::::<><>::uid://ci52bv1m15cbs::::res://cars/Doge.tscn<>uid://cfii24x1rv5go::::res://phone.tscn
+phone.gd::GDScript::-1::1719628479::0::1::::<>Node3D<>::
+phone.gdshader::Shader::-1::1719640390::0::1::::<><>::
+phone.tscn::PackedScene::5140836119898960906::1719629903::0::1::::<><>::res://phone.gd
 README.md::TextFile::-1::1718737710::0::1::::<><>::
 ::res://cars/::1719271077
 BaseCar.gd::GDScript::-1::1718737710::0::1::::<>VehicleBody3D<>::

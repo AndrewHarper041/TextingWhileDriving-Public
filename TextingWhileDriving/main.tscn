@@ -86,6 +86,9 @@ suspension_stiffness = 30.0
 [node name="wheal3" parent="car" index="3"]
 suspension_stiffness = 30.0
 
+[node name="speed" parent="car/Hud" index="0"]
+mouse_filter = 1
+
 [node name="Node3D" parent="car/doge-body" index="35" instance=ExtResource("2_eciog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43966, 2.0955, -1.09593)
 

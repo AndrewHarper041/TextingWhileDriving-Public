@@ -10,7 +10,7 @@
 script = ExtResource("1_3n6pf")
 
 [node name="ViewportQuad" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0, 0.232413, 0)
+transform = Transform3D(0.19, 0, 0, 0, -4.37114e-08, -0.4, 0, 1, -1.74846e-08, 0.00293469, 0.232413, 0.00217962)
 material_override = SubResource("StandardMaterial3D_nuxpk")
 mesh = SubResource("PlaneMesh_3x1ir")
 
@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -4.0
 offset_top = -4.0
-offset_right = 496.0
+offset_right = 516.0
 offset_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -34,3 +34,10 @@ theme_override_font_sizes/font_size = 24
 text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
 placeholder_text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
 wrap_mode = 1
+
+[node name="Control" type="Control" parent="SubViewport" node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+shortcut_context = NodePath("../PhoneScreen/TextEdit")
