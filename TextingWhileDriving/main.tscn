@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://buc0ehhwfqggq"]
+[gd_scene load_steps=18 format=3 uid="uid://buc0ehhwfqggq"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="1_mdet3"]
+[ext_resource type="PackedScene" uid="uid://cfii24x1rv5go" path="res://phone.tscn" id="2_eciog"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8igth"]
 
@@ -85,11 +86,20 @@ suspension_stiffness = 30.0
 [node name="wheal3" parent="car" index="3"]
 suspension_stiffness = 30.0
 
+[node name="speed" parent="car/Hud" index="0"]
+mouse_filter = 1
+
+[node name="Node3D" parent="car/doge-body" index="35" instance=ExtResource("2_eciog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43966, 2.0955, -1.09593)
+
 [node name="CollisionShape3D3" parent="car" index="9"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.000778139, 0.603737, -1.11035)
 
 [node name="CollisionShape3D4" parent="car" index="10"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.000778139, 0.653567, 1.99781)
+
+[node name="Phone" parent="car" instance=ExtResource("2_eciog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51102, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00689697, -9.36265, 0.059164)
