@@ -1,3 +1,6 @@
-res://phone.tscn
 res://phone.gdshader
 res://main.tscn
+res://phone.tscn
+res://text_node.tscn
+res://phone.gd
+res://text_node.gd

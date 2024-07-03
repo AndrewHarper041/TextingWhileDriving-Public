@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfii24x1rv5go"]
+[gd_scene load_steps=5 format=3 uid="uid://cfii24x1rv5go"]
 
 [ext_resource type="Script" path="res://phone.gd" id="1_3n6pf"]
+[ext_resource type="PackedScene" uid="uid://3uvgmybj2a8c" path="res://text_node.tscn" id="2_w8nxb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuxpk"]
 
@@ -18,26 +19,18 @@ mesh = SubResource("PlaneMesh_3x1ir")
 
 [node name="PhoneScreen" type="Node2D" parent="SubViewport"]
 
-[node name="TextEdit" type="TextEdit" parent="SubViewport/PhoneScreen"]
+[node name="Control" type="Control" parent="SubViewport/PhoneScreen"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 516.0
-offset_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-theme_override_colors/background_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-placeholder_text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-wrap_mode = 1
 
-[node name="Control" type="Control" parent="SubViewport" node_paths=PackedStringArray("shortcut_context")]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-shortcut_context = NodePath("../PhoneScreen/TextEdit")
+[node name="Label" type="Label" parent="SubViewport/PhoneScreen/Control"]
+layout_mode = 1
+offset_right = 267.0
+offset_bottom = 23.0
+text = "Type \"Some dumb bullshit\" to win!"
+
+[node name="TextNode" parent="SubViewport/PhoneScreen/Control" instance=ExtResource("2_w8nxb")]
