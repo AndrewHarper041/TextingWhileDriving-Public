@@ -11,7 +11,7 @@ func _ready():
 
 func you_win():
 	print("You Win")
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://victory_screen.tscn")
 
 func _process(delta):
 	if not Global.is_driving:
@@ -22,16 +22,35 @@ func _unhandled_input(event):
 		print(event)
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
-			
-			
+
 		match(event.keycode):
 			KEY_SPACE:
 				text.label.text += " "
 			KEY_BACKSPACE:
 				print(text.label.text)
 				text.label.text = text.label.text.substr(0, text.label.text.length() - 1)
+			KEY_APOSTROPHE:
+				pass
+			KEY_1:
+				pass
+			KEY_2:
+				pass
+			KEY_3:
+				pass
+			KEY_4:
+				pass
+			KEY_5:
+				pass
+			KEY_LEFT:
+				pass
+			KEY_RIGHT:
+				pass
+			KEY_UP:
+				pass
+			KEY_DOWN:
+				pass
 			_:
 				text.label.text += OS.get_keycode_string(event.key_label)
 				
-	if $SubViewport/PhoneScreen/Control/Label.text == $SubViewport/PhoneScreen/Control/TextNode.label.text:
+	if "SOME DUMB BULLSHIT" == $SubViewport/PhoneScreen/Control/TextNode.label.text:
 		you_win()

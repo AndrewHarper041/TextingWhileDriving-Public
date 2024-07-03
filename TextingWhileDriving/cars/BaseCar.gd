@@ -24,7 +24,7 @@ func _physics_process(delta):
 		var fwd_mps = transform.basis.x.x
 		steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
 		steer_target *= STEER_LIMIT
-		if Input.is_key_pressed(KEY_S):
+		if Input.is_key_pressed(KEY_DOWN):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 
 			if speed < 20 and speed != 0:
@@ -33,7 +33,7 @@ func _physics_process(delta):
 				engine_force = engine_force_value
 		else:
 			engine_force = 0
-		if Input.is_key_pressed(KEY_W):
+		if Input.is_key_pressed(KEY_UP):
 			if fwd_mps >= -1:
 				if speed < 30 and speed != 0:
 					engine_force = -clamp(engine_force_value * 10 / speed, 0, 300)
