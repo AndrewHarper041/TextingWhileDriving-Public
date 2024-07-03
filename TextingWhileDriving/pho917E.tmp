@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfii24x1rv5go"]
+
+[ext_resource type="Script" path="res://phone.gd" id="1_3n6pf"]
+[ext_resource type="PackedScene" uid="uid://3uvgmybj2a8c" path="res://text_node.tscn" id="2_w8nxb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuxpk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3x1ir"]
+
+[node name="Phone" type="Node3D"]
+script = ExtResource("1_3n6pf")
+
+[node name="ViewportQuad" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.19, 0, 0, 0, -4.37114e-08, -0.4, 0, 1, -1.74846e-08, 0.00293469, 0.232413, 0.00217962)
+material_override = SubResource("StandardMaterial3D_nuxpk")
+mesh = SubResource("PlaneMesh_3x1ir")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="PhoneScreen" type="Node2D" parent="SubViewport"]
+
+[node name="Control" type="Control" parent="SubViewport/PhoneScreen"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/PhoneScreen/Control"]
+layout_mode = 1
+offset_right = 267.0
+offset_bottom = 23.0
+text = "Type \"Some dumb bullshit\" to win!"
+
+[node name="TextNode" parent="SubViewport/PhoneScreen/Control" instance=ExtResource("2_w8nxb")]
