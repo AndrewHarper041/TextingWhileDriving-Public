@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://buc0ehhwfqggq"]
+[gd_scene load_steps=24 format=3 uid="uid://buc0ehhwfqggq"]
 
 [ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/Doge.tscn" id="1_mdet3"]
 [ext_resource type="PackedScene" uid="uid://cfii24x1rv5go" path="res://phone.tscn" id="2_eciog"]
@@ -21,6 +21,12 @@ ssao_radius = 1.5
 ssao_intensity = 0.6
 ssil_enabled = true
 glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7aqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_poiig"]
+font_size = 75
+font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vcyyo"]
 load_path = "res://.godot/imported/texture_10.png-e7c5a65dd3d563733df30455b582db9f.s3tc.ctex"
@@ -94,6 +100,14 @@ suspension_stiffness = 30.0
 
 [node name="speed" parent="car/Hud" index="0"]
 mouse_filter = 1
+
+[node name="traffic_violation" type="Label" parent="car/Hud" index="1"]
+material = SubResource("ShaderMaterial_n7aqv")
+offset_right = 1152.0
+offset_bottom = 648.0
+label_settings = SubResource("LabelSettings_poiig")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Node3D" parent="car/doge-body" index="35" instance=ExtResource("2_eciog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43966, 2.0955, -1.09593)
