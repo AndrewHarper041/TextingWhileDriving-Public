@@ -1,0 +1,36 @@
+extends Area3D
+
+# Direction of stop sign CollisionShape3D
+var stop_sign_unit_vector: Vector3 = Vector3(0,0,1)
+var contained_body
+const ENFORCEMENT_THRESHOLD = -5.0
+var min_stop_sign_projected_speed: float
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+# Calculate body speed perpendicular to stop sign collision box
+func get_body_projected_speed(body):
+	return stop_sign_unit_vector.dot(contained_body.get_linear_velocity())
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if contained_body:
+		var stop_sign_projected_speed: float = get_body_projected_speed(contained_body)
+		print("Projected Speed: " + str(stop_sign_projected_speed))
+		
+		min_stop_sign_projected_speed = min(min_stop_sign_projected_speed, stop_sign_projected_speed)
+
+func _on_body_entered(body):
+	contained_body = body
+	min_stop_sign_projected_speed = get_body_projected_speed(contained_body)
+	
+func _on_body_exited(body):
+	contained_body = null
+	
+	if min_stop_sign_projected_speed < ENFORCEMENT_THRESHOLD:
+		print("=========== TRAFFIC VIOLATION !!! ===========")
+		print("Body min speed: " + str(min_stop_sign_projected_speed))
+	
+	min_stop_sign_projected_speed = 0.0
