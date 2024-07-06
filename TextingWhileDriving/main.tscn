@@ -83,6 +83,7 @@ directional_shadow_max_distance = 200.0
 
 [node name="car" parent="." instance=ExtResource("1_mdet3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564415, 0.184314, -6.30866)
+collision_layer = 3
 STEER_LIMIT = 0.8
 engine_force_value = 200
 
@@ -202,6 +203,8 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="stopSign" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("4_cmgoq")
 
 [node name="stop_sign_1" parent="stopSign" instance=ExtResource("5_7t7bd")]
