@@ -1,15 +1,16 @@
 extends Area3D
 
 # Direction of stop sign CollisionShape3D
-var stop_sign_unit_vector: Vector3 = Vector3(0,0,1)
+var stop_sign_unit_vector: Vector3
 var contained_body
 const ENFORCEMENT_THRESHOLD = -5.0
 var min_stop_sign_projected_speed: float
 #@onready var traffic_violation_label = $car/Hud/traffic_violation
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO - obtain actual normal vector that accounts for rotation etc.
+	stop_sign_unit_vector = Vector3(0,0,1)
 	pass
 
 # Calculate body speed perpendicular to stop sign collision box

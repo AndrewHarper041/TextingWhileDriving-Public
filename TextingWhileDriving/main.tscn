@@ -69,7 +69,7 @@ radial_segments = 20
 rings = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lf72t"]
-size = Vector3(12, 5, 1)
+size = Vector3(12, 5, 2)
 
 [node name="Main" type="Node3D"]
 
